@@ -1,26 +1,221 @@
-@import "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html, body {
+  min-height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Quicksand', sans-serif;
+  background-color: #FFADC1;
+  color: #F68AAA;
+}
+
+/* ---------------- NAVBAR ---------------- */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: #FFADC1;
+  padding: 1rem 2rem;
+  border-bottom: 2px solid #F68AAA;
+}
+
+/* Links */
+a {
+  color: #F68AAA;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+a:hover {
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* ---------------- MAIN LAYOUT ---------------- */
+
+main {
+  padding: 3rem 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ---------------- SECTIONS (pattern windows) ---------------- */
+
+.section {
+  margin-bottom: 20px;
+  padding: 2.5rem;
+
+  background-image: url('/striped_background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  border: 3px solid #F68AAA;
+  border-radius: 20px;
+}
+
+/* ---------------- TYPOGRAPHY ---------------- */
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+
+/* ---------------- BANNER ---------------- */
+
+.banner {
+  max-width: 1400px;
+  margin: 0 auto 3rem auto;
+}
+
+.banner img {
+  width: 100%;
+  border-radius: 20px;
+}
+
+/* ---------------- PLUSHIE GRID ---------------- */
+
+.plushie-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.plushie-card {
+  text-align: center;
+}
+
+.plushie-card img {
+  width: 180px;
+  height: 180px;
+  object-fit: cover;
+}
+
+/* ---------------- DROPDOWN BUTTON ---------------- */
+
+.dropdown-button {
+  display: flex;
+  justify-content: center;
+  margin: 3rem 0;
+}
+
+button {
+  background: none;
+  border: 3px solid #F68AAA;
+  border-radius: 110px;
+  padding: 1rem 2rem;
+  font-size: 1.5rem;
+  color: #F68AAA;
+  cursor: pointer;
+
+  transition:
+    transform 0.2s ease,
+    background-color 0.2s ease;
+}
+
+button:hover {
+  transform: scale(1.1);
+  background-color: rgba(246, 138, 170, 0.15);
+}
+
+button:active {
+  transform: scale(0.95);
+}
+
+/* ---------------- RANDOM BUTTON AREA ---------------- */
+
+.random-pick {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* ---------------- PLUSHIE PROFILE PAGE ---------------- */
+
+.two-column {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.two-column img {
+  width: 260px;
+  height: 260px;
+  object-fit: cover;
+}
+
+/* List styling */
+ul {
+  list-style: none;
+}
+
+li {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ---------------- FOOTER ---------------- */
+
+footer {
+  background-color: #FFADC1;
+  padding: 2rem;
+  text-align: center;
+  border-top: 2px solid #F68AAA;
+  margin-top: 4rem;
+}
+
+/* ---------------- DROPDOWN ANIMATION ---------------- */
+
+.dropdown-panel {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, opacity 0.4s ease;
+  opacity: 0;
+
+  /* space between button and grid */
+  margin-top: 2rem;
+}
+
+.dropdown-panel.open {
+  max-height: 2000px; /* big enough to fit grid */
+  opacity: 1;
+}
+
+/* Button styling (no border, on pink bg) */
+.heart-button {
+  border: none;
+  background: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: #F68AAA;
+
+  transition: transform 0.2s ease;
+}
+
+.heart-button:hover {
+  transform: scale(1.15);
+}
+
+.heart-button:active {
+  transform: scale(0.95);
 }
