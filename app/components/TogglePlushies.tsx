@@ -7,23 +7,26 @@ export default function TogglePlushies() {
   const [open, setOpen] = useState(false);
 
   return (
-    <>
-      {/* BUTTON (on pink background) */}
+    <section className="dropdown-section">
       <div className="dropdown-button">
         <button
-          className="heart-button"
+          className="dropdown-toggle"
           onClick={() => setOpen(!open)}
         >
-          {open ? "❤︎ Hide plushies" : "❤︎ Show plushies"}
+          <div className="dropdown-toggle-inner">
+            <span className="heart">❤︎</span>
+            <span className="label">
+              {open ? "Hide plushies" : "Show plushies"}
+            </span>
+          </div>
         </button>
       </div>
 
-      {/* DROPDOWN PANEL */}
       <div className={`dropdown-panel ${open ? "open" : ""}`}>
-        <div className="section">
+        <div className="dropdown-content">
           <PlushieGrid />
         </div>
       </div>
-    </>
+    </section>
   );
 }
