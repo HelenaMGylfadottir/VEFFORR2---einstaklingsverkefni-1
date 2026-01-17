@@ -12,7 +12,7 @@ export default async function PlushiePage({ params }: Props) {
   const plushie = plushies.find((p) => p.id === id);
 
   if (!plushie) {
-    return <p>Plushie not found.</p>;
+    return <p>Bangsi ekki fundinn.</p>;
   }
 
   return (
@@ -28,10 +28,10 @@ export default async function PlushiePage({ params }: Props) {
         <div>
           <h2>{plushie.name}</h2>
           <h2>────────────────</h2>
-          <ul>
+          <ul>   
             <li>- Obtained: {plushie.obtained}</li>
-            <li>- Age: {plushie.age}</li>
-            <li>- Fun fact: {plushie.funFact}</li>
+            <li>- Fengin: {plushie.age}</li>
+            <li>- Staðreynd: {plushie.funFact}</li>
           </ul>
         </div>
       </section>
