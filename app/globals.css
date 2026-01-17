@@ -22,32 +22,32 @@ nav {
   position: sticky;
   top: 0;
   z-index: 100;
-  background-color: #FFADC1;
+  background-color: #F68AAA;
   padding: 1rem 2rem;
-  border-bottom: 2px solid #F68AAA;
+  font-size: 1.25rem;
+  color: #FFADC1;
 }
 
-/* Links */
 a {
-  color: #F68AAA;
+  color: #FFC8D5;
   text-decoration: none;
   transition: color 0.2s ease, transform 0.2s ease;
 }
 
 a:hover {
-  color: #ffffff;
+  color: #FFF8F8;
   transform: scale(1.05);
 }
 
 /* ---------------- MAIN LAYOUT ---------------- */
 
 main {
-  padding: 3rem 1.5rem;
+  padding: 3rem 0.5rem;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* ---------------- SECTIONS (pattern windows) ---------------- */
+/* ---------------- SECTIONS ---------------- */
 
 .section {
   margin-bottom: 20px;
@@ -65,17 +65,17 @@ main {
 /* ---------------- TYPOGRAPHY ---------------- */
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.6rem;
   margin-bottom: 1rem;
 }
 
 h2 {
-  font-size: 2.2rem;
+  font-size: 2rem;
   margin-bottom: 1rem;
 }
 
 p {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   line-height: 1.7;
 }
 
@@ -95,8 +95,8 @@ p {
 
 .plushie-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
 }
 
 .plushie-card {
@@ -104,64 +104,149 @@ p {
 }
 
 .plushie-card img {
-  width: 180px;
-  height: 180px;
+  width: 100%;
+  max-width: 220px;
+  height: auto;
   object-fit: cover;
+  border-radius: 16px;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.plushie-card img:hover {
+  transform: scale(1.05);
+}
+
+.plushie-link {
+  color: #F68AAA;
+  text-decoration: none;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.plushie-link:hover {
+  color: #ffffff;
+  transform: scale(1.05);
 }
 
 /* ---------------- DROPDOWN BUTTON ---------------- */
 
+.dropdown-toggle {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
+}
+
+.dropdown-toggle-inner {
+  background-image: url('/striped_background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  font-family: 'Quicksand', sans-serif;
+
+  border: 3px solid #F68AAA;
+  border-radius: 24px;
+  padding: 1.5rem 3rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+
+  color: #F68AAA;
+  font-size: 1.25rem;
+
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dropdown-toggle:hover .dropdown-toggle-inner,
+.dropdown-toggle:active .dropdown-toggle-inner {
+  background-image: none;
+  background-color: #FFC8D5;
+}
+
 .dropdown-button {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+/* ---------------- DROPDOWN SECTION ---------------- */
+
+.dropdown-section {
   margin: 3rem 0;
 }
 
-button {
-  background: none;
+.dropdown-panel {
+  max-height: 26px;
+  overflow: hidden;
+
   border: 3px solid #F68AAA;
-  border-radius: 110px;
-  padding: 1rem 2rem;
-  font-size: 1.5rem;
-  color: #F68AAA;
-  cursor: pointer;
+  border-radius: 20px;
 
-  transition:
-    transform 0.2s ease,
-    background-color 0.2s ease;
+  background-image: url('/striped_background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  margin-top: 2rem;
+  transition: max-height 0.6s ease;
 }
 
-button:hover {
-  transform: scale(1.1);
-  background-color: rgba(246, 138, 170, 0.15);
+.dropdown-panel.open {
+  max-height: 2600px;
 }
 
-button:active {
-  transform: scale(0.95);
+.dropdown-content {
+  padding: 2.5rem;
 }
 
-/* ---------------- RANDOM BUTTON AREA ---------------- */
+/* ---------------- RANDOM BUTTON ---------------- */
 
 .random-pick {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 1rem;
 }
 
+.random-button {
+  background-color: #FFADC1;
+  border: none;
+  border-radius: 999px;
+  margin-left: 20px;
+
+  padding: 0.75rem 1.25rem;
+  font-size: 1.1rem;
+  color: #F68AAA;
+  cursor: pointer;
+
+  transition: transform 0.2s ease;
+}
+
+.random-button:hover {
+  transform: scale(1.1);
+}
+
+.random-button:active {
+  transform: scale(0.95);
+}
+
 /* ---------------- PLUSHIE PROFILE PAGE ---------------- */
 
-.two-column {
+/* SAME WIDTH AS OTHER SECTIONS */
+.section.two-column {
   display: flex;
   gap: 3rem;
   align-items: center;
   justify-content: center;
 }
 
-.two-column img {
-  width: 260px;
-  height: 260px;
+/* BIGGER IMAGE — PROFILE PAGE ONLY */
+.section.two-column img {
+  width: 420px;
+  height: 420px;
   object-fit: cover;
+  border-radius: 24px;
 }
 
 /* List styling */
@@ -170,52 +255,48 @@ ul {
 }
 
 li {
-  font-size: 1.1rem;
-  margin-bottom: 0.75rem;
+  font-size: 1.3rem;
+  margin-bottom: 1rem;
 }
 
 /* ---------------- FOOTER ---------------- */
 
 footer {
-  background-color: #FFADC1;
+  background-color: #F68AAA;
   padding: 2rem;
-  text-align: center;
-  border-top: 2px solid #F68AAA;
-  margin-top: 4rem;
+  text-align: right;
+  color: #FFC8D5;
 }
 
-/* ---------------- DROPDOWN ANIMATION ---------------- */
-
-.dropdown-panel {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease, opacity 0.4s ease;
-  opacity: 0;
-
-  /* space between button and grid */
-  margin-top: 2rem;
+footer a {
+  color: #FFADC1;
 }
 
-.dropdown-panel.open {
-  max-height: 2000px; /* big enough to fit grid */
-  opacity: 1;
+footer a:hover {
+  color: #ffffff;
 }
 
-/* Button styling (no border, on pink bg) */
-.heart-button {
-  border: none;
-  background: none;
-  font-size: 2rem;
-  cursor: pointer;
-  color: #F68AAA;
+/* ---------------- SIDE PATTERN STRIPS ---------------- */
 
-  transition: transform 0.2s ease;
+.side-pattern {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100px;
+
+  background-image: url('/striped_background.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  z-index: -1;
+  border: 3px solid #F68AAA;
 }
 
-.heart-button:hover {
-  transform: scale(1.15);
+.side-pattern.left {
+  left: 0;
 }
 
-.heart-button:active {
-  transform: scale(0.95);
+.side-pattern.right {
+  right: 0;
 }
