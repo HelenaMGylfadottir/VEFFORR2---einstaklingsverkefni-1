@@ -8,9 +8,16 @@ type Props = {
 export default function PlushieCard({ plushie }: Props) {
   return (
     <div className="plushie-card">
-      <img src={plushie.image} alt={plushie.name} />
-      <p></p>
-      <Link href={`/plushies/${plushie.id}`}>{plushie.name}</Link>
+      <Link href={`/plushies/${plushie.id}`}>
+        <img
+          src={plushie.image}
+          alt={plushie.name}
+        />
+      </Link>
+
+      <Link className="plushie-link" href={`/plushies/${plushie.id}`}>
+        <p>{plushie.name}</p>
+      </Link>
     </div>
   );
 }
