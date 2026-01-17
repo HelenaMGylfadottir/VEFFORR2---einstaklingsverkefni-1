@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <main>
       <header className="banner">
-        <img src="/banner_placeholder.png" alt="Banner" />
+        <img src="/banner.png" alt="Banner" />
       </header>
 
       <section className="section">
