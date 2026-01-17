@@ -233,7 +233,6 @@ p {
 
 /* ---------------- PLUSHIE PROFILE PAGE ---------------- */
 
-/* SAME WIDTH AS OTHER SECTIONS */
 .section.two-column {
   display: flex;
   gap: 3rem;
@@ -241,7 +240,6 @@ p {
   justify-content: center;
 }
 
-/* BIGGER IMAGE — PROFILE PAGE ONLY */
 .section.two-column img {
   width: 420px;
   height: 420px;
@@ -249,7 +247,6 @@ p {
   border-radius: 24px;
 }
 
-/* List styling */
 ul {
   list-style: none;
 }
