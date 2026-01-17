@@ -72,15 +72,6 @@ const plushies: Plushie[] = [
     age: "Recently acquired.",
     funFact: "Has the softest fabric.",
     about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
-  },
-  {
-    id: "plush-9",
-    name: "Plush 9",
-    image: "/placeholder.jpeg",
-    obtained: "Part of a collection.",
-    age: "One of the oldest plushies.",
-    funFact: "Never leaves the shelf.",
-    about: "Lorem ipsum dolor sit amet, consectetur adipiscing elit."
   }
 ];
 
