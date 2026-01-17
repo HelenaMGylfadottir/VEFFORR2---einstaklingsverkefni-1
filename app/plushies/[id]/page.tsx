@@ -27,7 +27,7 @@ export default async function PlushiePage({ params }: Props) {
 
         <div>
           <h2>{plushie.name}</h2>
-          <h2>--------------</h2>
+          <h2>────────────────</h2>
           <ul>
             <li>- Obtained: {plushie.obtained}</li>
             <li>- Age: {plushie.age}</li>

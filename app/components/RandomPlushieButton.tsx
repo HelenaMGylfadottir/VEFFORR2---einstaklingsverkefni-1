@@ -1,4 +1,5 @@
 "use client";
+
 import { useRouter } from "next/navigation";
 import plushies from "../data/plushies";
 
@@ -11,5 +12,13 @@ export default function RandomPlushieButton() {
     router.push(`/plushies/${random.id}`);
   }
 
-  return <button onClick={pickRandom}>❤︎⁠</button>;
+  return (
+    <button
+      className="random-button"
+      onClick={pickRandom}
+      aria-label="Pick a random plushie"
+    >
+      ❤︎
+    </button>
+  );
 }

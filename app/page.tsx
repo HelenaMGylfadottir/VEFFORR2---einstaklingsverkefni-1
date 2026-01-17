@@ -17,7 +17,7 @@ export default function Home() {
       <TogglePlushies />
 
       <section className="section">
-        <p>Having a hard time picking? Click here!        
+        <p>Having a hard time picking? Click here!
         <RandomPlushieButton />
         </p>
       </section>

@@ -11,6 +11,8 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <Navbar />
+        <div className="side-pattern left" />
+        <div className="side-pattern right" />
         {children}
         <Footer />
       </body>
